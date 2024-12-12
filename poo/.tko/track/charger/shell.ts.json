@@ -1,0 +1,380 @@
+{
+    "patches": [
+        {
+            "label": "2024-12-12_15-58-09",
+            "content": "@@ -371,964 +371,8 @@\n %7D;%0A%0A\n-/*%0A- Vamos modelar um notebook que pode ter ou n%C3%A3o tanto carregador quanto bateria. ----%0A%0A- Ter%C3%A1 que reescrever os m%C3%A9todos %60usar %3Ctempo%3E%60, %60ligar%60.%0A%0A- S%C3%B3 poder%C3%A1 %60ligar%60 se tiver carga na bateria ou carregador.%0A- Enquanto em uso%0A  - se tiver apenas na bateria, a carga da bateria deve diminuir.%0A  - se estiver na bateria e no carregador, a carga deve aumentar.%0A- O carregador possui uma pot%C3%AAncia que implica na quantidade de carga carregada por unidade de tempo.%0A- A bateria possui uma carga e uma capacidade que representam a carga atual e o m%C3%A1ximo poss%C3%ADvel de carga.%0A- Para simplificar, vamos utilizar minutos como a unidade de tempo e de carga.%0A- Uma bateria %6015/50%60 significa que possui ainda 15 minutos de carga e suporta no m%C3%A1ximo 50.%0A- Um carregador com 3 de pot%C3%AAncia consegue em um minuto de uso, adicionar 3 minutos de carga na bateria.%0A*/%0A%0Aclass Notebook%0A%7B%0A    bateria: Bateria %7C null // pode existir ou ser nulo%0A%0A%0A    %0A%0A%7D%0A%0Aclass Bateria %0A%7B%0A%0A%7D%0A%0A%0A%0A\n clas\n"
+        },
+        {
+            "label": "2024-12-12_16-01-40",
+            "content": "@@ -1299,72 +1299,8 @@\n     \n-toString(): string%0A    %7B%0A        return %60Notebook: testet%60%0A    %7D\n %0A%0A%7D%0A\n@@ -1342,16 +1342,19 @@\n er %7B%0A   \n+ //\n  private\n@@ -1418,24 +1418,18 @@\n         \n-%0A       \n+//\n  console\n"
+        },
+        {
+            "label": "2024-12-12_16-02-23",
+            "content": "@@ -1294,170 +1294,8 @@\n lo%0A%0A\n-    private _isOn: boolean // o notebook pode estar delisgado ou ligado%0A%0A    constructor()%0A    %7B%0A        this._isOn = false // o notebook come%C3%A7a desligado%0A    %7D%0A%0A\n %0A   \n@@ -1350,18 +1350,14 @@\n ok: \n-(variavel)\n+testet\n %60%0A  \n"
+        },
+        {
+            "label": "2024-12-12_16-03-49",
+            "content": "@@ -1494,255 +1494,37 @@\n     \n-//vou fazer um if no toString para a variavel _isOn%0A        if(this._isOn)%0A            %7B%0A                return %60Notebook: ligado%60%0A            %7D%0A        else if(!this._isOn)%0A        %7B%0A            return %60Notebook: desligado%0A            %60%0A        %7D\n+return %60Notebook: (variavel)%60\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_16-05-07",
+            "content": "@@ -1709,24 +1709,37 @@\n k: desligado\n+%0A            \n %60%0A        %7D%0A\n"
+        },
+        {
+            "label": "2024-12-12_16-05-24",
+            "content": "@@ -1647,16 +1647,32 @@\n     else\n+ if(!this._isOn)\n %0A       \n"
+        },
+        {
+            "label": "2024-12-12_16-06-03",
+            "content": "@@ -1366,332 +1366,88 @@\n ado%0A\n-    private _haveBatery: boolean%0A    private _isCharging: boolean%0A%0A    // o notebook precisa de uma bateria ou esta carregando%0A%0A    constructor()%0A    %7B%0A        this._isOn = false // o notebook come%C3%A7a desligado%0A        this._haveBatery = false // nao come%C3%A7a com bateria%0A        this._isCharging = false // nao come%C3%A7a carregan\n+%0A    constructor()%0A    %7B%0A        this._isOn = false // o notebook come%C3%A7a desliga\n do%0A \n@@ -1720,265 +1720,8 @@\n  %7D%0A%0A\n-    turnOn(): void%0A    %7B%0A        if(!this._haveBatery && !this._isCharging)%0A            %7B%0A                console.log(%22fail: n%C3%A3o foi possivel ligar%22)%0A                return%0A            %7D%0A        else%0A        %7B%0A            this._isOn = true%0A        %7D%0A    %7D%0A%0A\n %7D%0A%0Ac\n@@ -1913,24 +1913,27 @@\n id %7B%0A       \n+ //\n  this.notebo\n"
+        },
+        {
+            "label": "2024-12-12_16-09-46",
+            "content": "@@ -2093,25 +2093,25 @@\n n%C3%A3o foi poss\n-%C3%AD\n+i\n vel ligar%22)%0A\n"
+        },
+        {
+            "label": "2024-12-12_16-10-00",
+            "content": "@@ -2221,167 +2221,8 @@\n  %7D%0A%0A\n-    use(tempo: number): void%0A    %7B%0A        if(!this._isOn)%0A            %7B%0A                console.log(%22fail: desligado%22)%0A            %7D%0A        /////////%0A    %7D%0A%0A\n %7D%0A%0Ac\n@@ -3198,32 +3198,35 @@\n : void %7B%0A       \n+ //\n  this.notebook.u\n"
+        },
+        {
+            "label": "2024-12-12_16-11-38",
+            "content": "@@ -1723,24 +1723,8 @@\n ring\n- // nao completo\n %0A   \n@@ -1982,20 +1982,8 @@\n void\n- // completo\n %0A   \n@@ -2372,22 +2372,8 @@\n ////\n- nao  completo\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_16-12-33",
+            "content": "@@ -1292,70 +1292,8 @@\n nulo\n-%0A    carregador: Carregador %7C null // pode existir ou ser nulo\n %0A%0A  \n@@ -2249,230 +2249,8 @@\n  %7D%0A%0A\n-    turnOff(): void // completo%0A    %7B%0A        if(this._isOn)%0A            %7B%0A                this._isOn = false%0A                return%0A            %7D%0A        else if(!this._isOn)%0A        %7B%0A            return%0A        %7D%0A    %7D%0A%0A\n     \n@@ -2446,31 +2446,8 @@\n %0A%7D%0A%0A\n-class Carregador %0A%7B%0A%0A%7D%0A\n %0A%0Acl\n"
+        },
+        {
+            "label": "2024-12-12_16-15-05",
+            "content": "@@ -1220,290 +1220,8 @@\n */%0A%0A\n-%0Aclass Bateria %0A%7B%0A%0A%7D%0A%0Aclass Carregador %0A%7B%0A    private _potecia: number%0A%0A    constructor()%0A    %7B%0A        //this._potecia = potencia%0A    %7D%0A%0A    getPotencia(): number%0A    %7B%0A        return this._potecia%0A    %7D%0A%0A    setPotencia(valor: number)%0A    %7B%0A        this._potecia = valor%0A    %7D%0A%7D%0A%0A\n clas\n@@ -1885,17 +1885,16 @@\n is._isOn\n- \n )%0A      \n@@ -2531,153 +2531,8 @@\n    %7D\n-%0A    %0A    setCharger(potencia: number): void%0A    %7B%0A        this.carregador = new Carregador()%0A        this.carregador.setPotencia(potencia)%0A    %7D\n %0A%0A  \n@@ -2706,18 +2706,54 @@\n  %7D%0A%0A\n-   \n+%7D%0A%0Aclass Bateria %0A%7B%0A%0A%7D%0A%0Aclass Carregador\n  %0A\n+%7B\n %0A%0A\n-%0A%7D%0A\n+%7D\n %0A%0A%0Ac\n@@ -2979,32 +2979,35 @@\n : void %7B%0A       \n+ //\n  this.notebook.t\n"
+        },
+        {
+            "label": "2024-12-12_16-19-57",
+            "content": "@@ -2098,37 +2098,59 @@\n     \n-let saidaStrign: string = %22%22%0A\n+//vou fazer um if no toString para a variavel _isOn\n %0A   \n@@ -2159,32 +2159,33 @@\n    if(this._isOn\n+ \n )%0A            %7B%0A\n@@ -2200,32 +2200,24 @@\n         \n-saidaStrign += %22\n+return %60\n Notebook\n@@ -2220,25 +2220,25 @@\n book: ligado\n-%22\n+%60\n %0A           \n@@ -2248,36 +2248,21 @@\n         \n-if(!this._isOn)%0A    \n+else%0A\n         \n@@ -2279,379 +2279,46 @@\n     \n-    saidaStrign += %22Notebook: desligado%22%0A               // return saidaStrign%0A            %7D%0A%0A        if(this._haveBatery)%0A            %7B%0A                saidaStrign += %60, Carregador $%7Bthis.carregador?.getPotencia()%7D%60%0A            %7D%0A%0A        //if()%7B%7D%0A            %0A            return saidaStrign%0A%0A        %0A        //vou fazer um if no toString para a variavel _isOn%0A%0A        \n+return %60Notebook: desligado%60%0A        %7D\n %0A   \n@@ -2908,40 +2908,8 @@\n r()%0A\n-        this._isCharging = true%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_16-25-37",
+            "content": "@@ -2570,18 +2570,8 @@\n rign\n- + %22teste%22\n %0A%0A  \n"
+        },
+        {
+            "label": "2024-12-12_16-26-07",
+            "content": "@@ -2443,23 +2443,11 @@\n ign \n++\n = \n-saidaStrign +\n %60, C\n@@ -2567,16 +2567,25 @@\n aStrign \n++ %22teste%22\n %0A%0A      \n"
+        },
+        {
+            "label": "2024-12-12_16-26-46",
+            "content": "@@ -2439,19 +2439,31 @@\n aStrign \n-+\n = \n+saidaStrign +\n %60, Carre\n"
+        },
+        {
+            "label": "2024-12-12_16-27-19",
+            "content": "@@ -3828,39 +3828,27 @@\n     \n-this.notebook.setCharger(power)\n+//TODO: Implementar\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_16-28-02",
+            "content": "@@ -3320,37 +3320,8 @@\n ia)%0A\n-        console.log(%22teste%22)%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_16-28-27",
+            "content": "@@ -1304,32 +1304,16 @@\n tructor(\n-potencia: number\n )%0A    %7B%0A\n@@ -1312,32 +1312,34 @@\n )%0A    %7B%0A        \n+//\n this._potecia = \n@@ -1498,81 +1498,8 @@\n    %7D\n-%0A%0A    toString(): string%0A    %7B%0A        return %60Carregador $%7Bthis.%7D%60%0A    %7D\n %0A%7D%0A%0A\n@@ -2322,32 +2322,35 @@\n %22%0A              \n+ //\n  return saidaStr\n@@ -2444,16 +2444,27 @@\n gn += %60,\n+ Carregador\n  $%7Bthis.\n@@ -2475,24 +2475,27 @@\n egador?.\n-toString\n+getPotencia\n ()%7D%60%0A   \n@@ -3316,16 +3316,45 @@\n tencia)%0A\n+        console.log(%22teste%22)%0A\n     %7D%0A%0A \n"
+        },
+        {
+            "label": "2024-12-12_16-32-33",
+            "content": "@@ -2565,43 +2565,8 @@\n )%7D%60%0A\n-                return saidaStrign%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_16-32-56",
+            "content": "@@ -2526,17 +2526,17 @@\n rign += \n-%22\n+%60\n , $%7Bthis\n@@ -2559,17 +2559,17 @@\n tring()%7D\n-%22\n+%60\n %0A       \n"
+        },
+        {
+            "label": "2024-12-12_16-33-47",
+            "content": "@@ -1573,24 +1573,16 @@\n  $%7Bthis.\n-_potecia\n %7D%60%0A    %7D\n@@ -2515,32 +2515,24 @@\n     \n-return %60Notebook: ligado\n+saidaStrign += %22\n , $%7B\n@@ -2558,16 +2558,18 @@\n String()\n+%7D%22\n %0A       \n@@ -2581,31 +2581,26 @@\n     \n-    %0A                %7D%60\n+return saidaStrign\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_16-35-35",
+            "content": "@@ -2279,33 +2279,33 @@\n  saidaStrign += \n-%60\n+%22\n Notebook: ligado\n@@ -2300,25 +2300,25 @@\n book: ligado\n-%60\n+%22\n %0A           \n@@ -2389,17 +2389,17 @@\n rign += \n-%60\n+%22\n Notebook\n@@ -2409,17 +2409,17 @@\n esligado\n-%60\n+%22\n %0A       \n@@ -2519,18 +2519,16 @@\n         \n-//\n return %60\n@@ -2575,16 +2575,36 @@\n tring()%0A\n+                    \n %0A       \n"
+        },
+        {
+            "label": "2024-12-12_16-36-20",
+            "content": "@@ -2580,111 +2580,8 @@\n ng()\n-%0A                saidaStrign += %60 $%7Bthis.carregador?.toString()%0A                    %0A                %7D%60\n %0A%0A  \n"
+        },
+        {
+            "label": "2024-12-12_16-37-27",
+            "content": "@@ -2640,16 +2640,36 @@\n tring()%0A\n+                    \n %0A       \n@@ -4178,24 +4178,75 @@\n (charger) %7B%0A\n+        //     console.log(%60Removido $%7Bcharger%7D%60);%0A\n         // %7D\n"
+        },
+        {
+            "label": "2024-12-12_16-38-07",
+            "content": "@@ -2640,36 +2640,16 @@\n tring()%0A\n-                    \n %0A       \n@@ -4072,33 +4072,199 @@\n arger(): void %7B%0A\n+        // let charger = this.notebook.removeCharger();%0A        // if (charger) %7B%0A        // %7D else %7B%0A        //     console.log(%22fail: Sem carregador%22);%0A        // %7D\n %0A\n-\n     %7D%0A%0A    setBa\n@@ -4327,25 +4327,16 @@\n ar%0A    %7D\n-%0A        \n %0A%0A    re\n@@ -4357,16 +4357,230 @@\n  void %7B%0A\n+        // let battery = this.notebook.removeBattery();%0A        // if (battery) %7B%0A        //     console.log(%60Removido $%7Bbattery%7D%60);%0A        // %7D else %7B%0A        //     console.log(%22fail: Sem bateria%22);%0A        // %7D\n %0A    %7D%0A%0A\n"
+        },
+        {
+            "label": "2024-12-12_16-38-42",
+            "content": "@@ -2637,16 +2637,56 @@\n toString\n+()%0A                    %0A                \n %7D%60%0A%0A    \n@@ -4104,226 +4104,9 @@\n d %7B%0A\n-        // let charger = this.notebook.removeCharger();%0A        // if (charger) %7B%0A        //     console.log(%60Removido $%7Bcharger%7D%60);%0A        // %7D else %7B%0A        //     console.log(%22fail: Sem carregador%22);%0A        // %7D\n %0A\n+\n     \n@@ -4177,24 +4177,33 @@\n mentar%0A    %7D\n+%0A        \n %0A%0A    remove\n@@ -4224,222 +4224,8 @@\n d %7B%0A\n-        // let battery = this.notebook.removeBattery();%0A        // if (battery) %7B%0A        //     console.log(%60Removido $%7Bbattery%7D%60);%0A        // %7D else %7B%0A        //     console.log(%22fail: Sem bateria%22);%0A        // %7D\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_16-42-20",
+            "content": "@@ -4064,15 +4064,8 @@\n d %7B%0A\n-    /*%0A\n     \n@@ -4282,19 +4282,8 @@\n / %7D%0A\n-        */%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_16-42-57",
+            "content": "@@ -2173,32 +2173,659 @@\n  completo%0A    %7B%0A\n+        let saidaStrign: string = %22%22%0A%0A        if(this._isOn)%0A            %7B%0A                saidaStrign += %60Notebook: ligado%60%0A            %7D%0A        if(!this._isOn)%0A            %7B%0A                saidaStrign += %60Notebook: desligado%60%0A               return saidaStrign%0A            %7D%0A%0A        if(this._haveBatery)%0A            %7B%0A                //return %60Notebook: ligado, $%7Bthis.carregador?.toString()%0A                saidaStrign += %60 $%7Bthis.carregador?.toString%7D%60%0A%0A                %7D%60%0A            %7D%0A%0A        //if()%7B%7D%0A            %0A            return saidaStrign %0A%0A        %0A        //vou fazer um if no toString para a variavel _isOn%0A%0A\n         %0A    %7D%0A%0A\n@@ -4060,24 +4060,26 @@\n  void %7B%0A    \n+/*\n %0A        // \n@@ -4285,32 +4285,34 @@\n    // %7D%0A        \n+*/\n %0A    %7D%0A%0A    setB\n"
+        },
+        {
+            "label": "2024-12-12_16-43-32",
+            "content": "@@ -2193,166 +2193,8 @@\n     \n-let saidaString: string = %22%22%0A%0A        if(this._isOn)%0A            %7B%0A                saidaString += %60Notebook: ligado%60%0A            %7D%0A%0A     return saidaString   \n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_16-47-34",
+            "content": "@@ -2936,24 +2936,16 @@\n regador(\n-potencia\n )%0A      \n"
+        },
+        {
+            "label": "2024-12-12_16-47-49",
+            "content": "@@ -2220,13 +2220,8 @@\n  = %22\n-teste\n %22%0A%0A \n@@ -3293,32 +3293,41 @@\n  show(): void %7B%0A\n+        %0A\n         console.\n"
+        },
+        {
+            "label": "2024-12-12_16-48-09",
+            "content": "@@ -2216,16 +2216,21 @@\n ring = %22\n+teste\n %22%0A%0A     \n"
+        },
+        {
+            "label": "2024-12-12_16-48-35",
+            "content": "@@ -2323,113 +2323,8 @@\n    %7D\n-%0A        if(!this._isOn) %0A            %7B%0A                saidaString += %60Notebook: deslgado%60%0A            %7D\n %0A%0A  \n"
+        },
+        {
+            "label": "2024-12-12_16-49-05",
+            "content": "@@ -2401,25 +2401,24 @@\n tebook: desl\n-i\n gado%60%0A      \n"
+        },
+        {
+            "label": "2024-12-12_16-49-15",
+            "content": "@@ -2429,170 +2429,8 @@\n    %7D\n-%0A        if(this._isCharging) %0A            %7B%0A                saidaString += %60, $%7Bthis.carregador?.toString()%0A                    %0A                %7D%60%0A            %7D\n %0A%0A  \n"
+        },
+        {
+            "label": "2024-12-12_16-50-25",
+            "content": "@@ -1586,9 +1586,8 @@\n cia%7D\n-W\n %60%0A  \n@@ -2534,16 +2534,36 @@\n tring()%0A\n+                    \n %0A       \n"
+        },
+        {
+            "label": "2024-12-12_16-50-37",
+            "content": "@@ -1873,37 +1873,8 @@\n an%0A%0A\n-    private _onTime: number%0A%0A\n     \n@@ -2133,33 +2133,8 @@\n ndo%0A\n-        this._onTime = 0%0A\n     \n@@ -2309,32 +2309,8 @@\n gado\n- por $%7Bthis._onTime%7D min\n %60%0A  \n"
+        },
+        {
+            "label": "2024-12-12_16-54-56",
+            "content": "@@ -3492,25 +3492,16 @@\n       %7D%0A\n-        %0A\n         \n"
+        },
+        {
+            "label": "2024-12-12_16-55-22",
+            "content": "@@ -3504,88 +3504,8 @@\n     \n-if(this._isOn)%0A            %7B%0A                this._onTime += tempo%0A            %7D\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_16-55-55",
+            "content": "@@ -3226,126 +3226,8 @@\n   %7B%0A\n-        if(this._isCharging)%0A            %7B%0A                console.log(%22fail: carregador j%C3%A1 conectado%22)%0A            %7D%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_16-57-36",
+            "content": "@@ -3326,39 +3326,16 @@\n ctado%22)%0A\n-                return%0A\n         \n"
+        },
+        {
+            "label": "2024-12-12_16-58-29",
+            "content": "@@ -3503,57 +3503,8 @@\n  %7D%0A%0A\n-    removeCharger(): void %0A    %7B%0A        %0A    %7D%0A%0A\n     \n@@ -4155,24 +4155,27 @@\n     %0A       \n+ //\n  let charger\n@@ -4212,24 +4212,26 @@\n ();%0A        \n+//\n  if (charger\n@@ -4234,32 +4234,34 @@\n rger) %7B%0A        \n+//\n      console.log\n@@ -4293,16 +4293,18 @@\n         \n+//\n  %7D else \n@@ -4305,32 +4305,34 @@\n  else %7B%0A        \n+//\n      console.log\n@@ -4357,32 +4357,34 @@\n ador%22);%0A        \n+//\n  %7D%0A        %0A    \n"
+        },
+        {
+            "label": "2024-12-12_16-59-08",
+            "content": "@@ -3544,131 +3544,8 @@\n     \n-if(this._isCharging)%0A            %7B%0A                console.log(%60Removido $%7Bthis.carregador?.getPotencia()%7DW%60)%0A            %7D\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_17-00-19",
+            "content": "@@ -3654,205 +3654,8 @@\n W%60)%0A\n-                this._isCharging = false%0A                return%0A            %7D%0A        if(!this._isCharging)%0A            %7B%0A                console.log(%22fail: Sem carregador%22)%0A                return%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-01-19",
+            "content": "@@ -3520,22 +3520,20 @@\n rger(): \n-string\n+void\n  %0A    %7B%0A\n@@ -3717,11 +3717,8 @@\n turn\n- %60%60\n %0A   \n@@ -3836,24 +3836,30 @@\n             \n+return\n %0A           \n@@ -4577,46 +4577,8 @@\n r();\n- // %C3%A9 um metodo que retorna uma string\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_17-04-28",
+            "content": "@@ -3592,18 +3592,16 @@\n         \n-//\n  console\n@@ -3721,42 +3721,8 @@\n rn %60\n-$%7Bthis.carregador?.getPotencia()%7DW\n %60%0A  \n@@ -3793,18 +3793,16 @@\n         \n-//\n console.\n@@ -3841,33 +3841,24 @@\n             \n-return %60%60\n %0A           \n"
+        },
+        {
+            "label": "2024-12-12_17-05-38",
+            "content": "@@ -3699,43 +3699,8 @@\n lse%0A\n-                this._isOn = false%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-06-42",
+            "content": "@@ -3942,34 +3942,16 @@\n       %7D%0A\n-        return %60%60%0A\n     %7D%0A%0A \n"
+        },
+        {
+            "label": "2024-12-12_17-07-11",
+            "content": "@@ -1238,543 +1238,8 @@\n  %0A%7B%0A\n-    private _carga: number%0A    private _cargaMaxima: number%0A%0A    constructor(cargaMaxima: number)%0A    %7B%0A        this._cargaMaxima = cargaMaxima%0A    %7D%0A%0A    getCarga(): number %0A    %7B%0A        return this._carga%0A    %7D%0A%0A    setCarga()%0A    %7B%0A        this._carga = this._cargaMaxima%0A    %7D%0A%0A    getCargaMaxima(): number %0A    %7B%0A        return this._cargaMaxima%0A    %7D%0A%0A    setCargaMaxima(valor: number)%0A    %7B%0A        this._cargaMaxima = valor%0A    %7D%0A%0A    toString(): string%0A    %7B%0A        return %60Bateria $%7Bthis._carga%7D/$%7Bthis._cargaMaxima%7D%60%0A    %7D\n %0A%7D%0A%0A\n@@ -3971,169 +3971,8 @@\n  %7D%0A%0A\n-    setBattery(carga: number) %0A    %7B%0A        this.bateria = new Bateria(carga)%0A        this._haveBatery = true%0A        this.bateria.setCargaMaxima(carga)%0A    %7D%0A%0A\n     \n@@ -4932,42 +4932,26 @@\n     \n-this.notebook.setBattery(capacity)\n+//TODO Implementar\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_17-14-04",
+            "content": "@@ -3185,128 +3185,8 @@\n    %7D\n-%0A        if(this._haveBatery)%0A            %7B%0A                saidaString += %60, $%7Bthis.bateria?.toString()%7D%60%0A            %7D\n %0A%0A  \n"
+        },
+        {
+            "label": "2024-12-12_17-14-59",
+            "content": "@@ -1382,48 +1382,8 @@\n ima%0A\n-        this._carga = this._cargaMaxima%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-15-20",
+            "content": "@@ -1502,29 +1502,16 @@\n etCarga(\n-valor: number\n )%0A    %7B%0A\n@@ -1517,18 +1517,16 @@\n %0A       \n-//\n  this._c\n@@ -1553,63 +1553,8 @@\n xima\n- ja %C3%A9 definido no construtor%0A       this._carga = valor\n %0A   \n@@ -5036,96 +5036,8 @@\n mpo%0A\n-                this.bateria?.setCarga(this.bateria.getCarga() - tempo)%0A               %0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-18-42",
+            "content": "@@ -4897,235 +4897,8 @@\n  %7D%0A%0A\n-    removeBattery(): string %0A    %7B%0A        if(this._haveBatery)%0A            %7B%0A                this._haveBatery = false%0A                return %60$%7Bthis.bateria?.getCarga()%7D/$%7Bthis.bateria?.getCargaMaxima()%7D%60%0A            %7D%0A    %7D%0A%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-20-45",
+            "content": "@@ -6242,24 +6242,27 @@\n id %7B%0A       \n+ //\n  let battery\n@@ -6299,24 +6299,26 @@\n ();%0A        \n+//\n  if (battery\n@@ -6321,36 +6321,39 @@\n tery) %7B%0A        \n+//\n     \n+ \n console.log(%60Rem\n@@ -6372,32 +6372,34 @@\n ery%7D%60);%0A        \n+//\n  %7D else %7B%0A      \n@@ -6392,32 +6392,34 @@\n  else %7B%0A        \n+//\n      console.log\n@@ -6441,32 +6441,34 @@\n eria%22);%0A        \n+//\n  %7D%0A    %7D%0A%0A    us\n"
+        },
+        {
+            "label": "2024-12-12_17-21-04",
+            "content": "@@ -5016,43 +5016,8 @@\n lse%0A\n-                this._isOn = false%0A\n     \n@@ -5113,34 +5113,16 @@\n       %7D%0A\n-        return %60%60%0A\n     %7D%0A%0A \n@@ -5470,16 +5470,22 @@\n %0A    %7D%0A%0A\n+    %0A%0A\n %0A%0A%7D%0A%0A%0A%0Ac\n"
+        },
+        {
+            "label": "2024-12-12_17-21-58",
+            "content": "@@ -5050,48 +5050,8 @@\n alse\n- // nao ta completo aqui!!!!!!!!!!!!!!!!\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_17-22-18",
+            "content": "@@ -5388,191 +5388,8 @@\n   %7B%0A\n-                if(this.bateria?.getCarga() %3C= this.bateria?.getCarga() - tempo )%0A                    %7B%0A                        console.log(%22fail: descarregou%22)%0A                    %7D%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-24-36",
+            "content": "@@ -5549,58 +5549,8 @@\n u%22)%0A\n-                        this.bateria?.setCarga(0)%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-25-06",
+            "content": "@@ -5621,30 +5621,8 @@\n   %7D%0A\n-                else%7B%0A\n     \n@@ -5727,34 +5727,16 @@\n  tempo)%0A\n-                %7D%0A\n         \n"
+        },
+        {
+            "label": "2024-12-12_17-25-32",
+            "content": "@@ -5651,28 +5651,24 @@\n             \n-    \n this._onTime\n@@ -5677,20 +5677,16 @@\n = tempo%0A\n-    \n         \n"
+        },
+        {
+            "label": "2024-12-12_17-26-19",
+            "content": "@@ -5415,17 +5415,17 @@\n .bateria\n-!\n+?\n .getCarg\n@@ -5429,18 +5429,51 @@\n arga() %3C\n+= this.bateria?.getCarga() - tempo\n  \n-0\n )%0A      \n"
+        },
+        {
+            "label": "2024-12-12_17-27-23",
+            "content": "@@ -5407,33 +5407,33 @@\n  if(this.bateria\n-?\n+!\n .getCarga() %3C 0)\n"
+        },
+        {
+            "label": "2024-12-12_17-27-39",
+            "content": "@@ -5429,18 +5429,16 @@\n arga() %3C\n-= \n  0)%0A    \n@@ -5545,102 +5545,28 @@\n his.\n-_isOn = false%0A                        this.bateria?.setCarga(0)%0A                        return\n+bateria?.setCarga(0)\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_17-28-19",
+            "content": "@@ -5388,44 +5388,8 @@\n   %7B%0A\n-                console.log(%22tete%22)%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-28-43",
+            "content": "@@ -5376,32 +5376,68 @@\n )%0A            %7B%0A\n+                console.log(%22tete%22)%0A\n                 \n@@ -5916,25 +5916,16 @@\n ompleto%0A\n-        %0A\n     %7D%0A%0A%0A\n"
+        },
+        {
+            "label": "2024-12-12_17-29-54",
+            "content": "@@ -5252,19 +5252,8 @@\n   %7B%0A\n-        /*%0A\n     \n@@ -5686,737 +5686,8 @@\n se%7B%0A\n-%0A                %7D%0A               %0A            %7D%0A        ///////// nao  completo%0A        */%0A%0A        if(!this._isOn)%0A            %7B%0A                console.log(%22fail: desligado%22)%0A            %7D%0A        if(this._isOn)%0A            %7B%0A                if(this._isCharging) // a bateria nao %C3%A9 gasta, ela recebe%0A                    %7B%0A                        if(this._haveBatery)%0A                            %7B%0A%0A                            %7D%0A                        if(!this._haveBatery)%0A                            %7B%0A%0A                            %7D%0A%0A                    %7D%0A                if(!this._isCharging) // nao ta carregando%0A                    %7B%0A                        if(this._haveBatery)%0A                            %7B%0A            \n     \n@@ -5724,28 +5724,16 @@\n = tempo%0A\n-            \n         \n@@ -5820,32 +5820,10 @@\n     \n-                return%0A \n+%7D%0A\n     \n@@ -5825,32 +5825,33 @@\n %0A               \n+%0A\n             %7D%0A  \n@@ -5860,181 +5860,40 @@\n     \n-                if(!this._haveBatery)%0A                            %7B%0A                                return%0A                            %7D%0A                    %7D%0A            %7D%0A\n+///////// nao  completo%0A        \n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_17-33-35",
+            "content": "@@ -6204,100 +6204,8 @@\n   %7B%0A\n-                                this._onTime += tempo%0A                                return\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_17-34-29",
+            "content": "@@ -5790,54 +5790,8 @@\n */%0A%0A\n-        let carga = this.bateria?.getCarga()%0A%0A\n     \n@@ -6506,186 +6506,8 @@\n   %7B%0A\n-                                if(carga! - 10 == 19)// verifica se a bateria nao vai ficar negativa%0A                                    %7B%0A%0A                                    %7D%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-36-52",
+            "content": "@@ -5834,21 +5834,8 @@\n ga()\n- // gambiarra\n %0A%0A  \n@@ -6596,18 +6596,16 @@\n ! - \n-tempo %3C= 0\n+10 == 19\n )// \n@@ -6691,80 +6691,8 @@\n   %7B%0A\n-                                        console.log(%22fail: descarregou%22)\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_17-37-38",
+            "content": "@@ -6779,133 +6779,8 @@\n u%22)%0A\n-                                        this._isOn = false%0A                                        this.bateria?.setCarga(0)%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-38-08",
+            "content": "@@ -6970,18 +6970,16 @@\n         \n-//\n this._on\n@@ -7019,26 +7019,24 @@\n             \n-//\n  this.bateri\n@@ -7112,18 +7112,16 @@\n         \n-//\n return%0A \n"
+        },
+        {
+            "label": "2024-12-12_17-38-38",
+            "content": "@@ -6974,87 +6974,10 @@\n     \n-    else%0A                                    %7B%0A                                \n+//\n this\n@@ -7017,32 +7017,34 @@\n                 \n+//\n  this.bateria?.s\n@@ -7120,54 +7120,17 @@\n     \n+//\n return%0A\n-                                    %7D%0A%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-39-10",
+            "content": "@@ -6125,20 +6125,8 @@\n ery)\n- //ultimo if\n %0A   \n@@ -6156,40 +6156,8 @@\n   %7B%0A\n-                                \n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_17-39-29",
+            "content": "@@ -6200,63 +6200,8 @@\n     \n-this.bateria?.setCarga(this.bateria.getCarga() + tempo)\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_17-40-40",
+            "content": "@@ -1,37 +1,4 @@\n-import %7B time %7D from %22console%22;%0A%0A\n func\n@@ -6256,62 +6256,8 @@\n po)%0A\n-                                this._onTime += tempo%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-41-24",
+            "content": "@@ -5880,65 +5880,8 @@\n arra\n-%0A        let cargaMaxima = this.bateria?.getCargaMaxima()\n %0A%0A  \n@@ -6201,151 +6201,8 @@\n   %7B%0A\n-                                if(carga! + tempo %3E cargaMaxima!)%0A                                    %7B%0A%0A                                    %7D%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-43-45",
+            "content": "@@ -6323,36 +6323,8 @@\n ma!)\n- // caso ultrapasse o limite\n %0A   \n@@ -6362,101 +6362,8 @@\n   %7B%0A\n-                                        this.bateria?.setCarga(this.bateria.getCargaMaxima())\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_17-44-22",
+            "content": "@@ -6521,60 +6521,9 @@\n    %7D\n-else %0A                                    %7B%0A        \n+%0A\n     \n@@ -6634,32 +6634,24 @@\n             \n-        \n this._onTime\n@@ -6664,47 +6664,8 @@\n mpo%0A\n-                                    %7D%0A%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-45-00",
+            "content": "@@ -6484,116 +6484,8 @@\n ())%0A\n-                                        this._onTime += time%0A                                        return%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-45-53",
+            "content": "@@ -6515,26 +6515,24 @@\n             \n-//\n  this._onTim\n"
+        },
+        {
+            "label": "2024-12-12_17-46-04",
+            "content": "@@ -6511,32 +6511,34 @@\n                 \n+//\n  this._onTime +=\n@@ -6531,36 +6531,35 @@\n his._onTime += t\n-empo\n+ime\n %0A               \n@@ -6833,55 +6833,8 @@\n mpo%0A\n-                                        return%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-46-39",
+            "content": "@@ -5937,75 +5937,8 @@\n ma()\n-// gambiarra%0A%0A        let potencia = this.carregador?.getPotencia()\n %0A%0A  \n@@ -6733,17 +6733,16 @@\n etCarga(\n-(\n this.bat\n@@ -6769,19 +6769,8 @@\n mpo)\n-*potencia!)\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_17-49-00",
+            "content": "@@ -6356,17 +6356,16 @@\n      if(\n-(\n carga! +\n@@ -6370,29 +6370,16 @@\n  + tempo\n-) * potencia!\n  %3E carga\n@@ -6837,11 +6837,9 @@\n mpo)\n- * \n+*\n pote\n"
+        },
+        {
+            "label": "2024-12-12_17-50-15",
+            "content": "@@ -6498,32 +6498,33 @@\n                 \n+ \n this.bateria?.se\n@@ -6806,32 +6806,33 @@\n teria?.setCarga(\n+(\n this.bateria.get\n@@ -6845,27 +6845,26 @@\n ) + \n-(potencia! * tempo)\n+tempo) * potencia!\n )%0A  \n"
+        },
+        {
+            "label": "2024-12-12_17-53-49",
+            "content": "@@ -6352,24 +6352,25 @@\n          if(\n+(\n carga! + (te\n@@ -6366,22 +6366,22 @@\n arga! + \n-(\n tempo\n+)\n  * poten\n@@ -6384,17 +6384,16 @@\n otencia!\n-)\n  %3E carga\n"
+        },
+        {
+            "label": "2024-12-12_17-55-38",
+            "content": "@@ -3173,160 +3173,8 @@\n do%60%0A\n-                if(this._haveBatery)%0A                    %7B%0A                        saidaString += %60, $%7Bthis.bateria?.toString()%7D%60%0A                    %7D%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_17-57-40",
+            "content": "@@ -3171,24 +3171,169 @@\n gado%60%0A      \n+          if(this._haveBatery)%0A                    %7B%0A                        saidaString += %60, $%7Bthis.bateria?.toString()%7D%60%0A                    %7D\n %0A           \n"
+        },
+        {
+            "label": "2024-12-12_17-57-52",
+            "content": "@@ -5131,44 +5131,8 @@\n !!!%0A\n-                console.log(%22rete%22)%0A\n     \n"
+        },
+        {
+            "label": "2024-12-12_18-00-01",
+            "content": "@@ -5127,16 +5127,52 @@\n !!!!!!!%0A\n+                console.log(%22rete%22)%0A\n         \n"
+        },
+        {
+            "label": "2024-12-12_18-00-13",
+            "content": "@@ -3179,153 +3179,8 @@\n     \n-          if(this._haveBatery)%0A                    %7B%0A                        saidaString += %60, $%7Bthis.bateria?.toString()%7D%60%0A                    %7D\n %0A   \n"
+        },
+        {
+            "label": "2024-12-12_18-01-12",
+            "content": "@@ -3169,16 +3169,168 @@\n ligado%60%0A\n+                if(this._haveBatery)%0A                    %7B%0A                        saidaString += %60, $%7Bthis.bateria?.toString()%7D%60%0A                    %7D%0A\n         \n"
+        },
+        {
+            "label": "2024-12-12_18-01-31",
+            "content": "@@ -404,35 +404,8 @@\n %7D;%0A%0A\n-//FALTOU APENAS O CASO 19%0A%0A\n /*%0A-\n"
+        },
+        {
+            "label": "2024-12-12_18-03-38",
+            "content": "import { time } from \"console\";\n\nfunction input(): string { let X: any = input; X.L = X.L || require(\"fs\").readFileSync(0).toString().split(/\\r?\\n/); return X.L.shift(); } // _TEST_ONLY_\n//function input(): string { let X: any = input; X.P = X.P || require(\"readline-sync\"); return X.P.question() } // _FREE_ONLY_\nfunction write(text: any, endl=\"\\n\") { process.stdout.write(\"\" + text + endl); }\nexport {};\n\n//FALTOU APENAS O CASO 19\n\n/*\n- Vamos modelar um notebook que pode ter ou n\u00e3o tanto carregador quanto bateria. ----\n\n- Ter\u00e1 que reescrever os m\u00e9todos `usar <tempo>`, `ligar`.\n\n- S\u00f3 poder\u00e1 `ligar` se tiver carga na bateria ou carregador.\n- Enquanto em uso\n  - se tiver apenas na bateria, a carga da bateria deve diminuir.\n  - se estiver na bateria e no carregador, a carga deve aumentar.\n- O carregador possui uma pot\u00eancia que implica na quantidade de carga carregada por unidade de tempo.\n- A bateria possui uma carga e uma capacidade que representam a carga atual e o m\u00e1ximo poss\u00edvel de carga.\n- Para simplificar, vamos utilizar minutos como a unidade de tempo e de carga.\n- Uma bateria `15/50` significa que possui ainda 15 minutos de carga e suporta no m\u00e1ximo 50.\n- Um carregador com 3 de pot\u00eancia consegue em um minuto de uso, adicionar 3 minutos de carga na bateria.\n*/\n\n\nclass Bateria \n{\n    private _carga: number\n    private _cargaMaxima: number\n\n    constructor(cargaMaxima: number)\n    {\n        this._cargaMaxima = cargaMaxima\n        this._carga = this._cargaMaxima\n    }\n\n    getCarga(): number \n    {\n        return this._carga\n    }\n\n    setCarga(valor: number)\n    {\n       // this._carga = this._cargaMaxima ja \u00e9 definido no construtor\n       this._carga = valor\n    }\n\n    getCargaMaxima(): number \n    {\n        return this._cargaMaxima\n    }\n\n    setCargaMaxima(valor: number)\n    {\n        this._cargaMaxima = valor\n    }\n\n    toString(): string\n    {\n        return `Bateria ${this._carga}/${this._cargaMaxima}`\n    }\n}\n\nclass Carregador \n{\n    private _potecia: number\n\n    constructor(potencia: number)\n    {\n        this._potecia = potencia\n    }\n\n    getPotencia(): number\n    {\n        return this._potecia\n    }\n\n    setPotencia(valor: number)\n    {\n        this._potecia = valor\n    }\n\n    toString(): string\n    {\n        return `Carregador ${this._potecia}W`\n    }\n}\n\nclass Notebook\n{\n    bateria: Bateria | null // pode existir ou ser nulo\n    carregador: Carregador | null // pode existir ou ser nulo\n\n    private _isOn: boolean // o notebook pode estar delisgado ou ligado\n    private _haveBatery: boolean\n    private _isCharging: boolean\n\n    private _onTime: number\n\n    // o notebook precisa de uma bateria ou esta carregando\n\n    constructor()\n    {\n        this._isOn = false // o notebook come\u00e7a desligado\n        this._haveBatery = false // nao come\u00e7a com bateria\n        this._isCharging = false // nao come\u00e7a carregando\n        this._onTime = 0\n    }\n\n\n    toString(): string // nao completo\n    {\n        let saidaString: string = \"\"\n\n        if(this._isOn)\n            {\n                saidaString += `Notebook: ligado por ${this._onTime} min`\n            }\n        if(!this._isOn) \n            {\n                saidaString += `Notebook: desligado`\n            }\n        if(this._isCharging) \n            {\n                saidaString += `, ${this.carregador?.toString()\n\n                }`\n            }\n        if(this._haveBatery)\n            {\n                saidaString += `, ${this.bateria?.toString()}`\n            }\n\n     return saidaString   \n    }\n\n    turnOn(): void // completo\n    {\n        if(!this._haveBatery && !this._isCharging)\n            {\n                console.log(\"fail: n\u00e3o foi poss\u00edvel ligar\")\n                return\n            }\n        else\n        {\n            this._isOn = true\n        }\n    }\n\n    turnOff(): void // completo\n    {\n        if(this._isOn)\n            {\n                this._isOn = false\n                return\n            }\n        else if(!this._isOn)\n        {\n            return\n        }\n    }\n    \n    setCharger(potencia: number): void\n    {\n        if(this._isCharging)\n            {\n                console.log(\"fail: carregador j\u00e1 conectado\")\n                return\n            }\n        this.carregador = new Carregador(potencia)\n        this._isCharging = true\n        this.carregador.setPotencia(potencia)\n    }\n\n    removeCharger(): string \n    {\n        if(this._isCharging)\n            {\n               // console.log(`Removido ${this.carregador?.getPotencia()}W`)\n                this._isCharging = false\n                this._isOn = false\n                return `${this.carregador?.getPotencia()}W`\n            }\n        if(!this._isCharging)\n            {\n                //console.log(\"fail: Sem carregador\")\n                return ``\n            }\n        return ``\n    }\n\n    setBattery(carga: number) \n    {\n        this.bateria = new Bateria(carga)\n        this._haveBatery = true\n        this.bateria.setCargaMaxima(carga)\n    }\n\n    removeBattery(): string \n    {\n        if(this._haveBatery)\n            {\n                this._haveBatery = false\n                this._isOn = false // nao ta completo aqui!!!!!!!!!!!!!!!!\n                return `${this.bateria?.getCarga()}/${this.bateria?.getCargaMaxima()}`\n            }\n        return ``\n    }\n\n    use(tempo: number): void\n    {\n        /*\n        if(!this._isOn)\n            {\n                console.log(\"fail: desligado\")\n            }\n        if(this._isOn)\n            {\n                if(this.bateria?.getCarga() <=  0)\n                    {\n                        console.log(\"fail: descarregou\")\n                        this._isOn = false\n                        this.bateria?.setCarga(0)\n                        return\n                    }\n                else{\n\n                }\n               \n            }\n        ///////// nao  completo\n        */\n\n        let carga = this.bateria?.getCarga() // gambiarra\n        let cargaMaxima = this.bateria?.getCargaMaxima()// gambiarra\n\n        let potencia = this.carregador?.getPotencia()\n\n        if(!this._isOn)\n            {\n                console.log(\"fail: desligado\")\n            }\n        if(this._isOn)\n            {\n                if(this._isCharging) // a bateria nao \u00e9 gasta, ela recebe\n                    {\n                        if(this._haveBatery) //ultimo if\n                            {\n                                if(carga! + (tempo * potencia!) > cargaMaxima!) // caso ultrapasse o limite\n                                    {\n                                       this.bateria?.setCarga(this.bateria.getCargaMaxima())\n                                        this._onTime += tempo\n                                        return\n                                    }else \n                                    {\n                                        this.bateria?.setCarga(this.bateria.getCarga() + (potencia! * tempo))\n                                        this._onTime += tempo\n                                        return\n                                    }\n\n                            }\n                        if(!this._haveBatery)\n                            {\n                                this._onTime += tempo\n                                return\n                            }\n\n                    }\n                if(!this._isCharging) // nao ta carregando\n                    {\n                        if(this._haveBatery)\n                            {\n                                if(carga! - tempo <= 0)// verifica se a bateria nao vai ficar negativa\n                                    {\n                                        console.log(\"fail: descarregou\")\n                                        this._isOn = false\n                                        this.bateria?.setCarga(0)\n                                    }\n                                    else\n                                    {\n                                this._onTime += tempo\n                                this.bateria?.setCarga(this.bateria.getCarga() - tempo)\n                                return\n                                    }\n\n                            }\n                        if(!this._haveBatery)\n                            {\n                                return\n                            }\n                    }\n            }\n\n    }\n\n\n\n}\n\n\n\nclass Adapter {\n    private notebook: Notebook = new Notebook();\n    show(): void {\n        console.log(this.notebook.toString());\n    }\n\n    turnOn(): void {\n        this.notebook.turnOn();\n    }\n\n    turnOff(): void {\n        this.notebook.turnOff();\n    }\n\n    setCharger(power: number): void {\n        this.notebook.setCharger(power)\n    }\n\n    removeCharger(): void {\n    \n        let charger = this.notebook.removeCharger(); // \u00e9 um metodo que retorna uma string\n         if (charger) {\n             console.log(`Removido ${charger}`);\n         } else {\n             console.log(\"fail: Sem carregador\");\n         }\n        \n    }\n\n    setBattery(capacity: number): void {\n        this.notebook.setBattery(capacity)\n    }\n\n    removeBattery(): void {\n        let battery = this.notebook.removeBattery();\n         if (battery) {\n            console.log(`Removido ${battery}`);\n         } else {\n             console.log(\"fail: Sem bateria\");\n         }\n    }\n\n    use(minutes: number): void {\n        this.notebook.use(minutes);\n    }\n}\n\n// Fun\u00e7\u00e3o principal\nfunction main() {\n    const adapter = new Adapter();\n    while (true) {\n        let line = input();\n        let args = line.split(\" \");\n        write(\"$\" + line);\n\n        if      (args[0] === \"end\"        ) { break;                           }\n        else if (args[0] === \"show\"       ) { adapter.show();                  }\n        else if (args[0] === \"turn_on\"    ) { adapter.turnOn();                }\n        else if (args[0] === \"turn_off\"   ) { adapter.turnOff();               }\n        else if (args[0] === \"use\"        ) { adapter.use(+args[1]);           }\n        else if (args[0] === \"set_charger\") { adapter.setCharger(+args[1]);    }\n        else if (args[0] === \"rm_charger\" ) { adapter.removeCharger();         }\n        else if (args[0] === \"set_battery\") { adapter.setBattery(+args[1]);    }\n        else if (args[0] === \"rm_battery\" ) { adapter.removeBattery();         }\n        else                                { write(\"fail: comando inv\u00e1lido\"); }\n\n    }\n}\n\nmain();\n"
+        }
+    ]
+}

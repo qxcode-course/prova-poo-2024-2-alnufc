@@ -1,0 +1,8 @@
+{
+    "patches": [
+        {
+            "label": "2024-12-06_14-54-15",
+            "content": "function input(): string { let X: any = input; X.L = X.L || require(\"fs\").readFileSync(0).toString().split(/\\r?\\n/); return X.L.shift(); } // _TEST_ONLY_\n//function input(): string { let X: any = input; X.P = X.P || require(\"readline-sync\"); return X.P.question() } // _FREE_ONLY_\nfunction write(text: any, endl=\"\\n\") { process.stdout.write(\"\" + text + endl); }\nexport {};\n\nclass Adapter {\n    setDriver(name: string, money: number): void {\n    }\n\n    setPassenger(name: string, money: number): void {\n    }\n\n    drive(distance: number): void {\n    }\n\n    leavePassenger(): void {\n    }\n\n    show(): void {\n    }\n}\n\nfunction main(): void {\n    let adapter: Adapter = new Adapter();\n    while (true) {\n        write(\"$\", \"\");\n        const line = input();\n        const args = line.split(\" \");\n        write(line);\n\n        if      (args[0] === \"end\"      ) { break;                                   }\n        else if (args[0] === \"setDriver\") { adapter.setDriver(args[1], +args[2]);    }\n        else if (args[0] === \"setPass\"  ) { adapter.setPassenger(args[1], +args[2]); }\n        else if (args[0] === \"drive\"    ) { adapter.drive(+args[1]);                 }\n        else if (args[0] === \"leavePass\") { adapter.leavePassenger();                }\n        else if (args[0] === \"show\"     ) { adapter.show();                          }\n        else                              { console.log(\"fail: command not found\");  }\n    }\n}\n\nmain();\n"
+        }
+    ]
+}

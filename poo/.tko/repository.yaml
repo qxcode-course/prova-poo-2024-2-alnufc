@@ -1,9 +1,8 @@
-remote: ../Readme.md
+remote: https://github.com/qxcodepoo/arcade/blob/master/Readme.md
 version: 0.0.1
 expanded:
-- missão
-- grupo
-- missão
+- campanha-principal
+- agregação-simples
 tasks: {}
 flags:
   minimum: 0
@@ -14,4 +13,4 @@ flags:
   devel: 0
 new_items: []
 lang: ts
-index: motouber
+index: charger
