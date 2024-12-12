@@ -3,7 +3,8 @@ version: 0.0.1
 expanded:
 - campanha-principal
 - agregação-simples
-tasks: {}
+tasks:
+  charger: 0:0:95
 flags:
   minimum: 0
   reward: 0
