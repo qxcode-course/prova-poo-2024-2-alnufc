@@ -2,6 +2,7 @@ remote: ../Readme.md
 version: 0.0.1
 expanded:
 - missão
+- missão
 - grupo
 - missão
 tasks: {}
@@ -14,4 +15,4 @@ flags:
   devel: 0
 new_items: []
 lang: ts
-index: motouber
+index: grupo
